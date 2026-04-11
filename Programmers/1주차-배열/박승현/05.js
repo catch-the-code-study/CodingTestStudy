@@ -1,3 +1,4 @@
+// 행렬의 곱셈
 // https://school.programmers.co.kr/learn/courses/30/lessons/12949
 // arr1: [[1, 4], [3, 2], [4, 1]] arr2: [[3, 3], [3, 3]]
 
