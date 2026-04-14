@@ -4,7 +4,6 @@
  * - 각 배열의 데이터 값은 -100,000 이상 100,000 이하입니다.
  */
 
-// 내가 작성한 답안
 function solution(arr) {
 	const setArr = [...new Set(arr)]; // 1. 중복 제거
 	setArr.sort((a, b) => b - a); // 2. 정렬
