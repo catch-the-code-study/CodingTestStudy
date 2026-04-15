@@ -8,10 +8,9 @@ function solution(N, stages){
   //1의 실패율을 구한다.
   //2가 몇 개 있는지 찾는다.
   //전체 length에서 1의 개수를 빼고 실패율을 구한다.
-  //stages의 max number은 N+1이다. 
+  //stages의  max number은 N+1이다. 
 
   const faultRate = [];
-  const hightFaultRate = [];
   let challenger = stages.length;
 
   function findStage(n){
@@ -24,7 +23,7 @@ function solution(N, stages){
 
   // challenger = challenger - stage1count;
 
-  for (let i = 1; i <= N+1; i++){
+  for (let i = 1; i <= N; i++){
     const stagecount = findStage(i);
     let rate = stagecount/challenger;
     faultRate.push({ stage: i, rate: rate});
