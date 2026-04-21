@@ -1,23 +1,37 @@
 /**
- * 알파벳 소문자로 구성된 문자열에서 같은 알파벳이 2개 붙어 있는 짝을 찾습니다.
- * 짝을 찾은 다음에는 그 둘을 제거한 뒤 앞뒤로 문자열을 이어붙입니다.
- * 이 과정을 반복해서 문자열을 모두 제거한다면 짝지어 제거하기가 종료됩니다.
- * 문자열 S가 주어졌을 때 짝지어 제거하기를 성공적으로 수행할 수 있는지 반환하는 함수를 완성하세요.
- * 성공적으로 수행할 수 있으면 1을, 아니면 0을 반환해주면 됩니다.
- * s: "baabaa" | result: 1
- * s: "cdcd" | result: 0
+ * N은 s의 길이입니다. s를 순회하며 괄호의 쌍을 확인하므로 시간 복잡도는 O(N)입니다.
+ * 참고로 괄호 쌍을 확인할 때 push() 메서드와 pop() 메서드의 시간 복잡도는 O(1)입니다.
+ * decimal: 10, return: 1010
  */
 
-const solution = (str) => {
-  const arr = [];
+const solution = (decimal) => {
+  const stack = [];
 
-  for (const s of str) {
-    arr.push(s);
-    if (arr[arr.length - 1] === arr[arr.length - 2]) {
-      arr.pop();
-      arr.pop();
-    }
+  while (decimal > 0) {
+    stack.push(decimal % 2);
+    decimal = Math.floor(decimal / 2);
   }
 
-  return arr.length === 0 ? 1 : 0;
+  return stack.reverse().join("");
 };
+
+console.log(solution(10));
+
+// 책에 있는 코드
+
+function solution(decimal) {
+  const stack = [];
+
+  while (decimal > 0) {
+    const remainder = decimal % 2;
+    stack.push(remainder);
+    decimal = Math.floor(decimal / 2);
+  }
+
+  let binary = "";
+  while (stack.length > 0) {
+    binary += stack.pop();
+  }
+
+  return binary;
+}
