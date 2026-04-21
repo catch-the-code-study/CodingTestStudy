@@ -2,6 +2,7 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/42584
 // prices: [1, 2, 3, 2, 3], return [4, 3, 1, 1, 0]
 
+// 문제가 이상해서 직접 풀지 않음
 function solution(prices) {
   const n = prices.length;
   const answer = new Array(n).fill(0); // ➊ 가격이 떨어지지 않은 기간을 저장할 배열
