@@ -13,4 +13,4 @@ function solution(arr1, arr2) {
   });
 }
 
-// 거의 ai 써서 푼 문제여서 다시 봐야함..
+
