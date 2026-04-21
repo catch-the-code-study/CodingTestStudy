@@ -16,6 +16,7 @@ const solution = (str) => {
   return arr.length === 0 ? 1 : 0;
 };
 
+// 책에 있는 코드
 function bookSolution(s) {
   const stack = []; // 스택 초기화
 
