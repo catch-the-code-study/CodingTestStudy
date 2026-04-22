@@ -1,0 +1,26 @@
+function solution(decimal) {
+  // toString(2)는 숫자를 2진수 문자열로 변환해줌
+  return decimal.toString(2);
+}
+
+console.log(solution(10));
+
+// 스택 adt 구현
+// function solution(decimal) {
+//   if (decimal === 0) return "0";
+
+//   let result = "";
+//   let num = decimal;
+
+//   while (num > 0) {
+//     // 1. 2로 나눈 나머지를 결과 앞에 붙임 (나중에 들어온 게 앞에 가야 하므로)
+//     result = (num % 2) + result;
+
+//     // 2. 2로 나눈 몫을 다시 숫자로 저장 (소수점은 버림)
+//     num = Math.floor(num / 2);
+//   }
+
+//   return result;
+// }
+
+// console.log(solution(10)); // "1010"
