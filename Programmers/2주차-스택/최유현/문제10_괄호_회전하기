@@ -1,0 +1,33 @@
+function solution(s) {
+  let answer = 0;
+  let arr = s.split("");
+
+  for (let i = 0; i < s.length; i++) {
+    if (isValid(arr)) {
+      answer++;
+    }
+
+    const firstChar = arr.shift();
+    arr.push(firstChar);
+  }
+
+  return answer;
+}
+
+function isValid(arr) {
+  const stack = [];
+  //객체로 활용함
+  const pairs = { ")": "(", "]": "[", "}": "{" };
+
+  for (let char of arr) {
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
+    } else {
+      if (stack.length === 0 || stack[stack.length - 1] !== pairs[char]) {
+        return false;
+      }
+      stack.pop();
+    }
+  }
+  return stack.length === 0;
+}
