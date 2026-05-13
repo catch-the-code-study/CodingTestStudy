@@ -10,7 +10,7 @@ const solution = (id_list, report, k) => {
   const reportCount = new Map();
   const reportList = new Map();
 
-  reports.forEach((msg) => {
+  for (const msg of reports) {
     const [reporter, target] = msg.split(" ");
 
     reportCount.set(target, (reportCount.get(target) || 0) + 1);
@@ -19,7 +19,7 @@ const solution = (id_list, report, k) => {
       reportList.set(reporter, []);
     }
     reportList.get(reporter).push(target);
-  });
+  }
 
   return id_list.map((id) => {
     const targets = reportList.get(id) || [];
