@@ -1,0 +1,17 @@
+function solution(participant, completion) {
+  const table = new Map();
+
+  for (const name of participant) {
+    table.set(name, (table.get(name) || 0) + 1);
+  }
+
+  for (const name of completion) {
+    table.set(name, table.get(name) - 1);
+  }
+
+  for (const [name, count] of table) {
+    if (count > 0) {
+      return name;
+    }
+  }
+}
