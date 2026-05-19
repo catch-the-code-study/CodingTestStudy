@@ -5,7 +5,7 @@
 
 const solution = (numbers) => {
   const answer = numbers
-    .map(String)
+    .map((num) => String(num))
     .sort((a, b) => b + a - (a + b))
     .join("");
 
