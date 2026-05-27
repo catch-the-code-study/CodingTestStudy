@@ -10,8 +10,6 @@ const solution = (phone_book) => {
   console.log(phone_book);
 };
 
-solution(phone_book);
-
 // 책에 있는 코드
 function solution(phone_book) {
   phone_book.sort(); // ➊ 전화번호부 정렬
