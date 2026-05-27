@@ -7,7 +7,12 @@ const phone_book = ["119", "97674223", "1195524421"];
 
 const solution = (phone_book) => {
   phone_book.sort();
-  console.log(phone_book);
+  for (let i = 0; i < phone_book.length - 1; i++) {
+    if (phone_book[i + 1].startsWith(phone_book[i])) {
+      return false;
+    }
+  }
+  return true;
 };
 
 // 책에 있는 코드
